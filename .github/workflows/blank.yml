@@ -1,28 +1,27 @@
 yaml
 name: AirAlertUA APK
 
-on:
+"on":
   workflow_dispatch:
 
 jobs:
   build:
-    name: Build AirAlertUA
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "17"
 
-      - name: Setup Gradle
+      - name: Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.13'
+          gradle-version: "8.13"
 
       - name: Build APK
         working-directory: android
